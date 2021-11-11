@@ -402,3 +402,5 @@ C:\08Backend-uppgift2\Iman-AspNetMVC\AspNetMVC\obj\Debug\net5.0\ref\AspNetMVC.dl
 C:\08Backend-uppgift2\Iman-AspNetMVC\AspNetMVC\obj\Debug\net5.0\AspNetMVC.pdb
 C:\08Backend-uppgift2\Iman-AspNetMVC\AspNetMVC\obj\Debug\net5.0\AspNetMVC.genruntimeconfig.cache
 C:\08Backend-uppgift2\Iman-AspNetMVC\AspNetMVC\obj\Debug\net5.0\Razor\Views\Products\Index.cshtml.g.cs
+C:\08Backend-uppgift2\Iman-AspNetMVC\AspNetMVC\obj\Debug\net5.0\Razor\Views\Products\Details.cshtml.g.cs
+C:\08Backend-uppgift2\Iman-AspNetMVC\AspNetMVC\obj\Debug\net5.0\Razor\Views\Products\Create.cshtml.g.cs

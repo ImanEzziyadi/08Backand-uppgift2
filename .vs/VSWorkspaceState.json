@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Iman-AspNetMVC"
+    "\\Iman-AspNetMVC",
+    "\\Iman-AspNetMVC\\AspNetMVC",
+    "\\Iman-AspNetMVC\\AspNetMVC\\Controllers"
   ],
-  "SelectedNode": "\\Iman-AspNetMVC\\Iman-AspNetMVC.sln",
+  "SelectedNode": "\\Iman-AspNetMVC\\AspNetMVC\\AspNetMVC.csproj",
   "PreviewInSolutionExplorer": false
 }

@@ -1,6 +1,7 @@
 ﻿using AspNetMVC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,18 +18,22 @@ namespace AspNetMVC.Controllers
         public async Task<ActionResult> Index()
         {
             var http = new HttpClient();
-            var products = await http.GetFromJsonAsync<List<Product>>("https://wepapi-iman.azurewebsites.net/api/Products");
+            var response = await http.GetAsync("https://wepapi-iman.azurewebsites.net/api/Products");
+            var products = JsonConvert.DeserializeObject<List<Product>>(await response.Content.ReadAsStringAsync());
 
             return View(products);
         }
 
         // GET: ProductsController/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+            var http = new HttpClient();
+            var product = await http.GetFromJsonAsync<Product>($"https://wepapi-iman.azurewebsites.net/api/Products/{id}");
+
+            return View(product);
         }
-       
-        
+
+
 
         // GET: ProductsController/Create
         public ActionResult Create()
@@ -39,10 +44,13 @@ namespace AspNetMVC.Controllers
         // POST: ProductsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(Product product)
         {
             try
             {
+                var client = new HttpClient();
+                await client.PostAsJsonAsync("https://wepapi-iman.azurewebsites.net/api/Products", product);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -50,7 +58,6 @@ namespace AspNetMVC.Controllers
                 return View();
             }
         }
-
         // GET: ProductsController/Edit/5
         public ActionResult Edit(int id)
         {
@@ -92,5 +99,7 @@ namespace AspNetMVC.Controllers
                 return View();
             }
         }
+
+
     }
 }

@@ -1,0 +1,43 @@
+﻿@model AspNetMVC.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+
+        <img src="  @Html.DisplayFor(model => model.ImageUrl)" class="card-img-top" alt="">
+        <h5 class="card-title  pt-2">@Html.DisplayFor(model => model.Name)</h5>
+        <p class="card-text pt-2"> @Html.DisplayFor(model => model.Description)</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <p class="text-danger price pt-2"> @Html.DisplayFor(model => model.Price):-</p>
+            <button class="btn btn-outline-info">
+                <i class="fas fa-shopping-cart me-2"></i>
+                Beställ
+            </button>
+        </div>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted"><i class="fas fa-box text-success me-2"></i> lagerstatus</small>
+        <a asp-action="Index" >Back to List</a>
+        
+
+    </div>
+</div>
+        
+
+
+
+   
+
+
+
+
+
+
+
+
